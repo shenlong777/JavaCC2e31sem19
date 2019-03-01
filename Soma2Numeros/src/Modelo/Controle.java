@@ -16,11 +16,15 @@ public class Controle
         validacao.Validar();
         if (validacao.mensagem.equals(""))
         {
-            Calculos calculos = new Calculos();
-            calculos.n1 = validacao.n1;
-            calculos.n2 = validacao.n2;
-            calculos.Somar();
+            Calculos calculos = new Calculos(
+            validacao.n1, validacao.n2);
+            
+//            calculos.n1 = validacao.n1;
+//            calculos.n2 = validacao.n2;
+//            calculos.Somar();
+
             this.resultado = calculos.res.toString();
+            
         }
         else
         {
