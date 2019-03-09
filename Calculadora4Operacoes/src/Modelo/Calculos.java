@@ -12,31 +12,36 @@ public class Calculos
         this.num1 = num1;
         this.num2 = num2;
         this.operacao = operacao;
+        Calcular();
     }
     
     private void Calcular()
     {
+        if (this.operacao.equals("+")) Somar();
+        if (this.operacao.equals("-")) Subtrair();
+        if (this.operacao.equals("*")) Multiplicar();
+        if (this.operacao.equals("/")) Dividir();
         
     }
     
     private void Somar()
     {
-        
+        this.res = this.num1 + this.num2;
     }
     
     private void Subtrair()
     {
-        
+        this.res = this.num1 - this.num2;
     }
     
     private void Multiplicar()
     {
-        
+        this.res = this.num1 * this.num2;
     }
     
     private void Dividir()
     {
-        
+        this.res = this.num1 /this.num2;
     }
 
     public Double getRes()

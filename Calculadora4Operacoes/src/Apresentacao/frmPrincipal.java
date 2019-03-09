@@ -31,21 +31,80 @@ public class frmPrincipal extends javax.swing.JDialog
     private void initComponents()
     {
 
+        btnSomar = new javax.swing.JButton();
+        txfNumero1 = new javax.swing.JTextField();
+        txfNumero2 = new javax.swing.JTextField();
+        btnSubtrair = new javax.swing.JButton();
+        btnMultiplicar = new javax.swing.JButton();
+        btnDividir = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Calculadora");
+
+        btnSomar.setText("+");
+        btnSomar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSomarActionPerformed(evt);
+            }
+        });
+
+        btnSubtrair.setText("-");
+
+        btnMultiplicar.setText("*");
+
+        btnDividir.setText("/");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblResultado)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnMultiplicar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSubtrair, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDividir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(txfNumero1)
+                    .addComponent(txfNumero2))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(txfNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txfNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSomar)
+                    .addComponent(btnSubtrair))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMultiplicar)
+                    .addComponent(btnDividir))
+                .addGap(18, 18, 18)
+                .addComponent(lblResultado)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed
+    {//GEN-HEADEREND:event_btnSomarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSomarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,5 +165,12 @@ public class frmPrincipal extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDividir;
+    private javax.swing.JButton btnMultiplicar;
+    private javax.swing.JButton btnSomar;
+    private javax.swing.JButton btnSubtrair;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JTextField txfNumero1;
+    private javax.swing.JTextField txfNumero2;
     // End of variables declaration//GEN-END:variables
 }
