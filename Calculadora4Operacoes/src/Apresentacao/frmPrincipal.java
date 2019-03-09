@@ -5,6 +5,9 @@
  */
 package Apresentacao;
 
+import Modelo.Controle;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Rever
@@ -52,10 +55,31 @@ public class frmPrincipal extends javax.swing.JDialog
         });
 
         btnSubtrair.setText("-");
+        btnSubtrair.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSubtrairActionPerformed(evt);
+            }
+        });
 
         btnMultiplicar.setText("*");
+        btnMultiplicar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnMultiplicarActionPerformed(evt);
+            }
+        });
 
         btnDividir.setText("/");
+        btnDividir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnDividirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,10 +125,39 @@ public class frmPrincipal extends javax.swing.JDialog
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Calcular(String operacao)
+    {
+        Modelo.Controle controle = new Modelo.Controle(
+            txfNumero1.getText(), txfNumero2.getText(), operacao);
+        if (controle.getMensagem().equals(""))
+        {
+            lblResultado.setText(controle.getResultado());
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, controle.getMensagem());
+        }
+    }
+    
     private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed
     {//GEN-HEADEREND:event_btnSomarActionPerformed
-        // TODO add your handling code here:
+        Calcular("+");
     }//GEN-LAST:event_btnSomarActionPerformed
+
+    private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSubtrairActionPerformed
+    {//GEN-HEADEREND:event_btnSubtrairActionPerformed
+        Calcular("-");
+    }//GEN-LAST:event_btnSubtrairActionPerformed
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMultiplicarActionPerformed
+    {//GEN-HEADEREND:event_btnMultiplicarActionPerformed
+        Calcular("*");
+    }//GEN-LAST:event_btnMultiplicarActionPerformed
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnDividirActionPerformed
+    {//GEN-HEADEREND:event_btnDividirActionPerformed
+        Calcular("/");
+    }//GEN-LAST:event_btnDividirActionPerformed
 
     /**
      * @param args the command line arguments
