@@ -1,19 +1,14 @@
 package Modelo;
 
-public class Calculos
+public class Calculos extends absAtributos
 {
-    private Double num1;
-    private Double num2;
-    private String operacao;
-    private Double res;
 
     public Calculos(Double num1, Double num2, String operacao)
     {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.operacao = operacao;
+        super(num1, num2, operacao);
         Calcular();
     }
+    
     
     private void Calcular()
     {
@@ -44,9 +39,6 @@ public class Calculos
         this.res = this.num1 /this.num2;
     }
 
-    public Double getRes()
-    {
-        return res;
-    }
+    
     
 }
